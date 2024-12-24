@@ -1,8 +1,8 @@
 -- Carregar a biblioteca Rayfield
-local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/yourusername/Rayfield/main/Module.lua"))()
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source"))()
 
 -- Configuração inicial
-local senhaCorreta = "minhasenha123" -- Substitua pela sua senha desejada
+local senhaCorreta = "" -- Substitua pela sua senha desejada
 
 -- Criar a janela principal
 local Window = Rayfield:CreateWindow({
