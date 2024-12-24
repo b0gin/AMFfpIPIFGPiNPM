@@ -1,0 +1,25 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remote = Instance.new("RemoteEvent", ReplicatedStorage)
+remote.Name = "FlyRemote"
+
+remote.OnServerEvent:Connect(function(player, enableFly)
+    local character = player.Character
+    if not character then return end
+
+    local humanoid = character:FindFirstChild("Humanoid")
+    if not humanoid then return end
+
+    if enableFly then
+        -- Habilitar voo
+        local bodyVelocity = Instance.new("BodyVelocity")
+        bodyVelocity.MaxForce = Vector3.new(400000, 400000, 400000)
+        bodyVelocity.Velocity = Vector3.new(0, 50, 0) -- Velocidade do voo
+        bodyVelocity.Parent = character:FindFirstChild("HumanoidRootPart")
+    else
+        -- Desabilitar voo
+        local bodyVelocity = character:FindFirstChild("HumanoidRootPart"):FindFirstChildOfClass("BodyVelocity")
+        if bodyVelocity then
+            bodyVelocity:Destroy()
+        end
+    end
+end)
