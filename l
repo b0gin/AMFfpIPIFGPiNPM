@@ -5,7 +5,7 @@ for i = 1, #b64 do
     inv_b64[b64:sub(i, i)] = i - 1
 end
 
-function encodeBase64(data)
+function encode(data)
     local result = {}
     local padding = 0
     local i = 1
@@ -34,7 +34,7 @@ function encodeBase64(data)
     return table.concat(result):sub(1, #result - padding) .. string.rep("=", padding)
 end
 
-function decodeBase64(data)
+function decode(data)
     local result = {}
     local i = 1
     while i <= #data do
