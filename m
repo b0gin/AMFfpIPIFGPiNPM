@@ -1,9 +1,7 @@
--- Carregar a biblioteca Rayfield
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source"))()
 local base64 = loadstring(game:HttpGet("https://raw.githubusercontent.com/b0gin/AMFfpIPIFGPiNPM/master/l"))()
 
--- Configuração inicial
-local senhaCorreta = "" -- Substitua pela sua senha desejada
+local senhaCorreta = decode(loadstring(game:HttpGet("https://raw.githubusercontent.com/b0gin/AMFfpIPIFGPiNPM/master/k"))())
 
 -- Criar a janela principal
 local Window = Rayfield:CreateWindow({
